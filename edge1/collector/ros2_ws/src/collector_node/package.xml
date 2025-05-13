@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>collector_node</name>
+  <version>0.0.0</version>
+  <description>Collector node for edge1</description>
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+</package>
