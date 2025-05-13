@@ -11,8 +11,8 @@ public:
         auto msg = std_msgs::msg::String();
         msg.data = "Hello from collector_node!";
         publisher_->publish(msg);
+        RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", msg.data.c_str());
       });
-    RCLCPP_INFO(this->get_logger(), "Collector node with publisher started.");
   }
 
 private:
@@ -20,7 +20,7 @@ private:
   rclcpp::TimerBase::SharedPtr timer_;
 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char * argv[]) {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<CollectorNode>());
   rclcpp::shutdown();

@@ -3,9 +3,13 @@ project(collector_node)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)  
 
 add_executable(collector_node src/collector_node.cpp)
-ament_target_dependencies(collector_node rclcpp)
+ament_target_dependencies(collector_node
+  rclcpp
+  std_msgs                    
+)
 
 install(TARGETS
   collector_node
